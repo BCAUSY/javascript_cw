@@ -14,7 +14,7 @@ function getComputerChoice(){
 
   
 console.log(choice);
-console.log(getComputerChoice());
+
 console.log(getComputerChoice());
 console.log(getComputerChoice());
 console.log(getComputerChoice());
