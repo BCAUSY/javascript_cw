@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+   
+}
+
+body {
+    font-family:'Gill Sans', 'Gill Sans MT', sans-serif;
+    background-color: black;
+}
+
+
+.main-container {
+    height: 600px;
+    width: 70%;
+    max-width: 1200px;
+    margin: 300px auto;
+    background-color: grey;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+
+.linijka {
+    margin: 1rem 0;
+}
+
+button {
+    margin: 0.3rem 0;
+    border-radius: 4px;
+}
