@@ -1,6 +1,7 @@
 
 :root {
-
+--black: #1C1D1B;
+--grey: #AAA48F;
 }
 
 * {
@@ -9,7 +10,8 @@
 
 body {
   font-family: "Gill Sans", "Gill Sans MT", sans-serif;
-  background-color: black;
+  background-color: var(--black);
+  color: var(--black);
 }
 
 h1 {
@@ -18,11 +20,12 @@ h1 {
     padding: 0 1em;
 }
 
+
 .main-container {
   width: 100%;
   max-width: 1200px;
   margin: 300px auto;
-  background-color: grey;
+  background-color: var(--grey);
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -31,7 +34,7 @@ h1 {
 }
 
 #game-area {
-  border: 2px double; black;
+  border: 2px double; var(--black);
   margin: 15px;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -53,7 +56,7 @@ h1 {
 #humanScoreText,
 #computerScoreText {
     font-size: 4em;
-    background-color: black;
+    background-color: var(--black);
     padding: 0.4rem 1rem;
     color: white;
 }
@@ -78,7 +81,9 @@ h1 {
     flex-wrap: wrap;
 }
 
+
 button {
+  
   margin: 0.3rem 0;
   border-radius: 4px;
   font-size: 2em;
@@ -102,7 +107,8 @@ button {
     padding 2em;
     margin:2em;
     text-align:center;
-}
+    font-size: 1.5rem;
+  }
 
 
 @media screen and (max-width: 927px) {
@@ -120,4 +126,5 @@ button {
     flex-wrap: wrap;
    }
 }
+
 
