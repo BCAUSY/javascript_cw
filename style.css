@@ -1,7 +1,6 @@
-
 :root {
---black: #1C1D1B;
---grey: #AAA48F;
+  --black: #1C1D1B;
+  --grey: #AAA48F;
 }
 
 * {
@@ -15,11 +14,10 @@ body {
 }
 
 h1 {
-    font-size: 4em;
-    font-weight: 900;
-    padding: 0 1em;
+  font-size: 4em;
+  font-weight: 900;
+  padding: 0 1em;
 }
-
 
 .main-container {
   width: 100%;
@@ -29,61 +27,57 @@ h1 {
   display: flex;
   flex-flow: column;
   align-items: center;
-  border-radius:4px;
-  padding:1em;
+  border-radius: 4px;
+  padding: 1em;
 }
 
 #game-area {
-  border: 2px double; var(--black);
+  border: 2px double var(--black);
   margin: 15px;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  padding:1em 2em;
-  width:85%;
-  gap:1rem;
-  overflow:hidden
+  padding: 1em 2em;
+  width: 85%;
+  gap: 1rem;
+  overflow: hidden;
 }
 
-
 #score-container {
-    grid-column: 2;
-    grid-row: 2;
-    text-align:right;
-    padding:1rem;
-    display: none;
+  grid-column: 2;
+  grid-row: 2;
+  text-align: right;
+  padding: 1rem;
+  display: none;
 }
 
 #humanScoreText,
 #computerScoreText {
-    font-size: 4em;
-    background-color: var(--black);
-    padding: 0.4rem 1rem;
-    color: white;
+  font-size: 4em;
+  background-color: var(--black);
+  padding: 0.4rem 1rem;
+  color: white;
 }
 
 .linijka {
-    width:100%;
-    padding:1rem;
-    margin: 1px auto;
-    display: flex;
-    justify-content: space-between;
-
+  width: 100%;
+  padding: 1rem;
+  margin: 1px auto;
+  display: flex;
+  justify-content: space-between;
 }
 
 .tab {
-    text-align: left;
+  text-align: left;
 }
 
 #button-container {
-    align-items: center;
-    display: flex;
-    justify-content:space-between;
-    flex-wrap: wrap;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-
 button {
-  
   margin: 0.3rem 0;
   border-radius: 4px;
   font-size: 2em;
@@ -95,36 +89,11 @@ button {
 }
 
 #tools {
-
-    grid-column: 1;
-    display: none;
-    justify-content: space-around;    
+  grid-column: 1;
+  display: none;
+  justify-content: space-around;
 }
 
-#text{
-    grid-column: 1;
-    grid-row:3;
-    padding 2em;
-    margin:2em;
-    text-align:center;
-    font-size: 1.5rem;
+#text {
+  grid-column: 1;
   }
-
-
-@media screen and (max-width: 927px) {
-   #game-area {
-    grid-template-columns: 1fr;
-   }
-   #score-container {
-    grid-column: 1;
-    grid-row: 4;
-   }
-   #tools {
-    width: 100%;
-    justify-content: stretch;
-    display:flex;
-    flex-wrap: wrap;
-   }
-}
-
-
