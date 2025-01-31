@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body><div class="main-container">
-    <h1>ROCK, PAPER, SCISSORS</h1>
-    <div class="header">
-    <div class="button-container">
-        <button type="button" id="buttonRound">ROUND</button><br>
-        <button type="button" id="buttonGame">GAME</button>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <h1>ROCK, PAPER, SCISSORS</h1>
+      <div id="game-area">
+        <div class="button-container">
+          <button type="button" id="buttonRound">ROUND</button>
+          <button type="button" id="buttonGame">GAME</button>
+        </div>
+        <div class="score-container">
+          <span class="linijka"
+            >HUMAN SCORE: <strong><span id="humanScoreText">0</span></strong></span
+          ><br />
+          <span class="linijka"
+            >COMPUTER SCORE: <strong><span id="computerScoreText">0</span></strong></span>
+        </div>
+        <div class="user-choice">
+          <button id="buttonRock" type="button">ROCK</button>
+          <button id="buttonPaper" type="button">paper</button>
+          <button id="buttonScissors" type="button">scissors</button>
+        </div>
+        <p id="text">START A NEW GAME</p>
+      </div>
     </div>
-    <div class="score-container">
-        <span class="linijka">HUMAN SCORE: <span id="humanScoreText">0</span></span><br>
-        <span class="linijka">COMPUTER SCORE: <span id="computerScoreText">0</span></span>
-
-    </div>
-    </div>
-    <div class="user-choice">
-        <button id="buttonRock" type="button">ROCK</button>
-        <button id="buttonPaper" type="button">paper</button>
-        <button value="3" id="buttonScissors" type="button">scissors</button>
-    </div>
-   <!--  <button onclick="getHumanChoice()">click</button> -->
-
-    </div>
-</body>
-<script src="javascript.js"></script>
- --></html>
+  </body>
+  <script src="javascript.js"></script>
+</html>

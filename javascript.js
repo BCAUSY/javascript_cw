@@ -1,6 +1,9 @@
 const buttonRound = document.getElementById("buttonRound");
 const buttonGame = document.getElementById("buttonGame");
 
+const text = document.getElementById("text");
+const computerScoreText = document.getElementById("computerScoreText");
+const humanScoreText = document.getElementById("humanScoreText");
 const buttonRock = document.getElementById("buttonRock");
 const buttonPaper = document.getElementById("buttonPaper");
 const buttonScissors = document.getElementById("buttonScissors");
@@ -9,72 +12,62 @@ let humanScore = 0;
 let computerScore = 0;
 let humanSelection = "";
 
-
-
 // PLAYER CHOICE BUTTONS
 
-function getHumanChoice(choice){
-     humanSelection = choice;
-     console.log(choice);  
-     return humanSelection;   
-};
+function getHumanChoice(choice) {
+  humanSelection = choice;
+  console.log(choice);
+  return humanSelection;
+}
 
 // PLAYER CHOICE EVENT LISTENERS
 buttonRock.addEventListener("click", () => {
-    getHumanChoice("ROCK");
+  getHumanChoice("ROCK");
 });
 
 buttonPaper.addEventListener("click", () => {
-     getHumanChoice("PAPER");
-})
+  getHumanChoice("PAPER");
+});
 buttonScissors.addEventListener("click", () => {
-     getHumanChoice("SCISSORS");
-})
+  getHumanChoice("SCISSORS");
+});
 
+//COMPUTER CHOICE FUNCTION
 
-
-//COMPUTER CHOICE FUNCTION 
-
-function getComputerChoice(){
-     return choice[(Math.floor(Math.random() * 3))];
-};
+function getComputerChoice() {
+  return choice[Math.floor(Math.random() * 3)];
+}
 const computerSelection = getComputerChoice();
-
-
 
 console.log(humanSelection);
 console.log(computerSelection);
 
 // ROUND BUTTON EVENT LISTENER
 buttonRound.addEventListener("click", () => {
-     if (humanSelection === "") {
-         console.log("Please make a choice first!");
-         return; 
-     }
- 
-     const computerSelection = getComputerChoice(); 
-     console.log("Computer chose: " + computerSelection);
- 
-     playRound(humanSelection, computerSelection); 
- });
+  if (humanSelection === "") {
+    console.log("Please make a choice first!");
+    return;
+  }
 
+  const computerSelection = getComputerChoice();
+  console.log("Computer chose: " + computerSelection);
 
+  playRound(humanSelection, computerSelection);
+});
 
-function playRound(humanSelection, computerSelection){
-     if (humanSelection === computerSelection){
-          console.log("ITS A TIE");
-     } else {
-          console.log("nobody wins");
-     }
-};
+function playRound(humanSelection, computerSelection) {
+  if (humanSelection === computerSelection) {
+    console.log("ITS A TIE");
+  } else {
+    console.log("nobody wins");
+  }
+}
 buttonRound.onclick = playRound;
 
-// ROUND FUNCTION 
+// ROUND FUNCTION
 
 /* function playRound(humanChoice, computerChoice){ */
 
-
 /* playRound(humanSelection, computerSelection); */
 
- 
 /* console.log(computerSelection +"\n" + humanSelection);) */
