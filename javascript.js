@@ -66,36 +66,45 @@ function getComputerChoice() {
 computerSelection = getComputerChoice();
 
 ///
+buttonRound.onclick = toGameMenu;
+
+function restart() {
+     text.innerText = menu[0].text;
+     buttonGame.style.display = "block";
+     tools.style.display = "none";     
+     scoreContainer.style.display = "none";
+     buttonContainer.style.justifyContent = "space-around"
+     buttonRound.onclick = toGameMenu;
+}
 
 function toGameMenu(menu) {
-  tools.style.display = "block";
-  scoreContainer.style.display = "block";
-  text.innerText = menu[1].text;
-  buttonRound.innerText = menu[1]["button text"][1];
-  buttonGame.innerText = menu[1]["button text"][0];
+     buttonGame.style.display = "none";
+     buttonContainer.style.justifyContent = "center";
+     tools.style.display = "flex";
+     scoreContainer.style.display = "flex";
+     text.innerText = "FIGHT!";
+     buttonRound.onclick = restart;
 }
 
-
-function toMainMenu(menu) {
-  tools.style.display = "block";
-  scoreContainer.style.display = "block";
-  text.innerText = menu[0].text;
-  buttonContainer.style.display = "none";
+/* buttonGame.addEventListener("click", () => {
+  toMainMenu();
+}); */
+/* function toMainMenu(menu) {
+     text.innerText = menu[0].text;
 }
-
+ */
 
 console.log(humanSelection);
 console.log(computerSelection);
 
-// ROUND BUTTON EVENT LISTENER
+/* // ROUND BUTTON EVENT LISTENER
 buttonRound.addEventListener("click", () => {
+     if (text.inner !== "FIGHT!"){
      toGameMenu(menu);
-  if (humanSelection === "") {
-    console.log("Please make a choice first!");
-    return;
-  }
-  playRound(humanSelection, computerSelection);
-});
+     } else {
+          toMainMenu(menu);
+     }
+}); */
 
 function playRound(humanSelection, computerSelection) {
   if (humanSelection === computerSelection) {
@@ -106,11 +115,8 @@ function playRound(humanSelection, computerSelection) {
 }
 
 
-buttonRound.onclick = playRound;
 function playGame() {}
-function restart() {
-     toMainMenu()
-}
+
 // ROUND FUNCTION
 
 /* function playRound(humanChoice, computerChoice){ */
