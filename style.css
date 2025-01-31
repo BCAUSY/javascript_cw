@@ -1,3 +1,8 @@
+
+:root {
+
+}
+
 * {
   box-sizing: border-box;
 }
@@ -7,35 +12,70 @@ body {
   background-color: black;
 }
 
+h1 {
+    font-size: 4em;
+    font-weight: 900;
+    padding: 0 1em;
+}
+
 .main-container {
-  height: 600px;
-  width: 70%;
+  width: 100%;
   max-width: 1200px;
   margin: 300px auto;
   background-color: grey;
   display: flex;
   flex-flow: column;
   align-items: center;
+  border-radius:4px;
+  padding:1em;
 }
 
 #game-area {
-  border: 2px solid black;
+  border: 2px double; black;
   margin: 15px;
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: 2fr 1fr 2fr;
+  grid-template-columns: repeat(1, 1fr);
+  padding:1em 2em;
+  width:85%;
+  gap:1rem;
+  overflow:hidden
 }
 
-.linijka {
-  margin: 3rem 0;
-}
 
-.score-container {
+#score-container {
     grid-column: 2;
     grid-row: 2;
     text-align:right;
     padding:1rem;
-   /*  display: none; */
+    display: none;
+}
+
+#humanScoreText,
+#computerScoreText {
+    font-size: 4em;
+    background-color: black;
+    padding: 0.4rem 1rem;
+    color: white;
+}
+
+.linijka {
+    width:100%;
+    padding:1rem;
+    margin: 1px auto;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.tab {
+    text-align: left;
+}
+
+#button-container {
+    align-items: center;
+    display: flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
 }
 
 button {
@@ -49,12 +89,35 @@ button {
   filter: invert(1);
 }
 
-.user-choice {
+#tools {
+
     grid-column: 1;
-   /*  display: none; */
+    display: none;
+    justify-content: space-around;    
 }
 
 #text{
     grid-column: 1;
     grid-row:3;
+    padding 2em;
+    margin:2em;
+    text-align:center;
 }
+
+
+@media screen and (max-width: 927px) {
+   #game-area {
+    grid-template-columns: 1fr;
+   }
+   #score-container {
+    grid-column: 1;
+    grid-row: 4;
+   }
+   #tools {
+    width: 100%;
+    justify-content: stretch;
+    display:flex;
+    flex-wrap: wrap;
+   }
+}
+

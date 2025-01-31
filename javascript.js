@@ -44,16 +44,19 @@ function getHumanChoice(choice) {
 // PLAYER CHOICE EVENT LISTENERS
 buttonRock.addEventListener("click", () => {
   getHumanChoice("ROCK");
-  getComputerChoice()
+  getComputerChoice();
+  triggerGame();
 });
 
 buttonPaper.addEventListener("click", () => {
   getHumanChoice("PAPER");
   getComputerChoice();
+  triggerGame();
 });
 buttonScissors.addEventListener("click", () => {
   getHumanChoice("SCISSORS");
   getComputerChoice();
+  triggerGame();
 });
 
 //COMPUTER CHOICE FUNCTION
@@ -65,8 +68,9 @@ function getComputerChoice() {
 }
 computerSelection = getComputerChoice();
 
-///
+/// layout shift
 buttonRound.onclick = toGameMenu;
+buttonGame.onclick = playGame;
 
 function restart() {
      text.innerText = menu[0].text;
@@ -75,47 +79,61 @@ function restart() {
      scoreContainer.style.display = "none";
      buttonContainer.style.justifyContent = "space-around"
      buttonRound.onclick = toGameMenu;
+     buttonRound.innerText = "PLAY ROUND";
+     humanScore = 0;
+     computerScore = 0;
+     humanScoreText.innerText = "0";
+     computerScoreText.innerText = "0";
 }
 
 function toGameMenu(menu) {
      buttonGame.style.display = "none";
-     buttonContainer.style.justifyContent = "center";
+     buttonContainer.style.justifyContent = "flex-end";
      tools.style.display = "flex";
      scoreContainer.style.display = "flex";
      text.innerText = "FIGHT!";
+     buttonRound.innerText = "RUN";
      buttonRound.onclick = restart;
 }
-
-/* buttonGame.addEventListener("click", () => {
-  toMainMenu();
-}); */
-/* function toMainMenu(menu) {
-     text.innerText = menu[0].text;
-}
- */
 
 console.log(humanSelection);
 console.log(computerSelection);
 
-/* // ROUND BUTTON EVENT LISTENER
-buttonRound.addEventListener("click", () => {
-     if (text.inner !== "FIGHT!"){
-     toGameMenu(menu);
-     } else {
-          toMainMenu(menu);
-     }
-}); */
 
-function playRound(humanSelection, computerSelection) {
+
+function playRound() {
   if (humanSelection === computerSelection) {
     console.log("ITS A TIE");
+  } else if (humanSelection === "ROCK" && computerSelection === "SCISSORS" || humanSelection === "SCISSORS" && computerSelection === "PAPER" || humanSelection === "PAPER" && computerSelection === "ROCK"){
+    console.log("YOU WIN");
+    text.innerText = "POINT FOR YOU";
+    alert("YOU WIN");
+    humanScore+= 1;
+    humanScoreText.innerText = humanScore;
+    console.log(humanScore);
   } else {
-    console.log("nobody wins");
-}
-}
+    computerScore+= 1;
+    text.innerText = "COMPUTER GETS A POINT";
+    computerScoreText.innerText = computerScore;
+    console.log("COMPUTER WINS");
+  } if (humanScore === 5){
+    alert("YOU WON THE GAME");
+    restart();
+  } else if (computerScore === 5) {
+    alert("COMPUTER WON THE GAME");
+    restart();
+  }
+  }
 
 
-function playGame() {}
+function triggerGame(){
+  playRound();
+};
+
+function playGame() {
+  toGameMenu();
+  console.log("elo");
+};
 
 // ROUND FUNCTION
 
