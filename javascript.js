@@ -1,6 +1,6 @@
 const buttonContainer = document.getElementById("button-container");
 const buttonRound = document.getElementById("buttonRound");
-const buttonGame = document.getElementById("buttonGame");
+
 
 const scoreContainer = document.querySelector("#score-container");
 const computerScoreText = document.getElementById("computerScoreText");
@@ -70,11 +70,10 @@ computerSelection = getComputerChoice();
 
 /// layout shift
 buttonRound.onclick = toGameMenu;
-buttonGame.onclick = playGame;
 
 function restart() {
      text.innerText = menu[0].text;
-     buttonGame.style.display = "block";
+     
      tools.style.display = "none";     
      scoreContainer.style.display = "none";
      buttonContainer.style.justifyContent = "space-around"
@@ -87,7 +86,7 @@ function restart() {
 }
 
 function toGameMenu(menu) {
-     buttonGame.style.display = "none";
+     
      buttonContainer.style.justifyContent = "flex-end";
      tools.style.display = "flex";
      scoreContainer.style.display = "flex";
@@ -104,16 +103,16 @@ console.log(computerSelection);
 function playRound() {
   if (humanSelection === computerSelection) {
     console.log("ITS A TIE");
+    text.innerHTML = `computer <strong>${computerSelection}</strong> <br> you chose <strong>${humanSelection}</strong>`;
   } else if (humanSelection === "ROCK" && computerSelection === "SCISSORS" || humanSelection === "SCISSORS" && computerSelection === "PAPER" || humanSelection === "PAPER" && computerSelection === "ROCK"){
     console.log("YOU WIN");
-    text.innerText = "POINT FOR YOU";
-    alert("YOU WIN");
+    text.innerHTML = `computer <strong>${computerSelection}</strong> <br> you chose <strong>${humanSelection}</strong>`;
     humanScore+= 1;
     humanScoreText.innerText = humanScore;
     console.log(humanScore);
   } else {
+    text.innerHTML = `computer <strong>${computerSelection}</strong> <br> you chose <strong>${humanSelection}</strong>`;
     computerScore+= 1;
-    text.innerText = "COMPUTER GETS A POINT";
     computerScoreText.innerText = computerScore;
     console.log("COMPUTER WINS");
   } if (humanScore === 5){
