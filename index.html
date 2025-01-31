@@ -10,23 +10,20 @@
     <div class="main-container">
       <h1>ROCK, PAPER, SCISSORS</h1>
       <div id="game-area">
-        <div class="button-container">
-          <button type="button" id="buttonRound">ROUND</button>
-          <button type="button" id="buttonGame">GAME</button>
+        <div id="button-container">
+          <button type="button" id="buttonRound">PLAY ROUND</button>
+          <button type="button" id="buttonGame">PLAY GAME</button>
         </div>
-        <div class="score-container">
-          <span class="linijka"
-            >HUMAN SCORE: <strong><span id="humanScoreText">0</span></strong></span
-          ><br />
-          <span class="linijka"
-            >COMPUTER SCORE: <strong><span id="computerScoreText">0</span></strong></span>
+        <div id="score-container">
+          <div class="linijka"><p class="tab">HUMAN SCORE: </p><strong><span id="humanScoreText">0</span></strong></div>
+          <div class="linijka"><p class="tab">COMPUTER SCORE: </p><strong><span id="computerScoreText">0</span></strong></div>
         </div>
-        <div class="user-choice">
+        <div id="tools">
           <button id="buttonRock" type="button">ROCK</button>
           <button id="buttonPaper" type="button">paper</button>
           <button id="buttonScissors" type="button">scissors</button>
         </div>
-        <p id="text">START A NEW GAME</p>
+        <div id="text">START A NEW GAME</div>
       </div>
     </div>
   </body>
