@@ -1,6 +1,6 @@
 :root {
-  --black: #1C1D1B;
-  --grey: #AAA48F;
+  --black: #1c1d1b;
+  --grey: #aaa48f;
 }
 
 * {
@@ -96,4 +96,4 @@ button {
 
 #text {
   grid-column: 1;
-  }
+}

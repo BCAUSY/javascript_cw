@@ -1,7 +1,6 @@
 const buttonContainer = document.getElementById("button-container");
 const buttonRound = document.getElementById("buttonRound");
 
-
 const scoreContainer = document.querySelector("#score-container");
 const computerScoreText = document.getElementById("computerScoreText");
 const humanScoreText = document.getElementById("humanScoreText");
@@ -40,7 +39,6 @@ function getHumanChoice(choice) {
   return humanSelection;
 }
 
-
 // PLAYER CHOICE EVENT LISTENERS
 buttonRock.addEventListener("click", () => {
   getHumanChoice("ROCK");
@@ -72,67 +70,68 @@ computerSelection = getComputerChoice();
 buttonRound.onclick = toGameMenu;
 
 function restart() {
-     text.innerText = menu[0].text;
-     
-     tools.style.display = "none";     
-     scoreContainer.style.display = "none";
-     buttonContainer.style.justifyContent = "space-around"
-     buttonRound.onclick = toGameMenu;
-     buttonRound.innerText = "PLAY ROUND";
-     humanScore = 0;
-     computerScore = 0;
-     humanScoreText.innerText = "0";
-     computerScoreText.innerText = "0";
+  text.innerText = menu[0].text;
+
+  tools.style.display = "none";
+  scoreContainer.style.display = "none";
+  buttonContainer.style.justifyContent = "space-around";
+  buttonRound.onclick = toGameMenu;
+  buttonRound.innerText = "PLAY ROUND";
+  humanScore = 0;
+  computerScore = 0;
+  humanScoreText.innerText = "0";
+  computerScoreText.innerText = "0";
 }
 
 function toGameMenu(menu) {
-     
-     buttonContainer.style.justifyContent = "flex-end";
-     tools.style.display = "flex";
-     scoreContainer.style.display = "flex";
-     text.innerText = "FIGHT!";
-     buttonRound.innerText = "RUN";
-     buttonRound.onclick = restart;
+  buttonContainer.style.justifyContent = "flex-end";
+  tools.style.display = "flex";
+  scoreContainer.style.display = "flex";
+  text.innerText = "FIGHT!";
+  buttonRound.innerText = "RUN";
+  buttonRound.onclick = restart;
 }
 
 console.log(humanSelection);
 console.log(computerSelection);
 
-
-
 function playRound() {
   if (humanSelection === computerSelection) {
     console.log("ITS A TIE");
     text.innerHTML = `computer <strong>${computerSelection}</strong> <br> you chose <strong>${humanSelection}</strong>`;
-  } else if (humanSelection === "ROCK" && computerSelection === "SCISSORS" || humanSelection === "SCISSORS" && computerSelection === "PAPER" || humanSelection === "PAPER" && computerSelection === "ROCK"){
+  } else if (
+    (humanSelection === "ROCK" && computerSelection === "SCISSORS") ||
+    (humanSelection === "SCISSORS" && computerSelection === "PAPER") ||
+    (humanSelection === "PAPER" && computerSelection === "ROCK")
+  ) {
     console.log("YOU WIN");
     text.innerHTML = `computer <strong>${computerSelection}</strong> <br> you chose <strong>${humanSelection}</strong>`;
-    humanScore+= 1;
+    humanScore += 1;
     humanScoreText.innerText = humanScore;
     console.log(humanScore);
   } else {
     text.innerHTML = `computer <strong>${computerSelection}</strong> <br> you chose <strong>${humanSelection}</strong>`;
-    computerScore+= 1;
+    computerScore += 1;
     computerScoreText.innerText = computerScore;
     console.log("COMPUTER WINS");
-  } if (humanScore === 5){
+  }
+  if (humanScore === 5) {
     alert("YOU WON THE GAME");
     restart();
   } else if (computerScore === 5) {
     alert("COMPUTER WON THE GAME");
     restart();
   }
-  }
+}
 
-
-function triggerGame(){
+function triggerGame() {
   playRound();
-};
+}
 
 function playGame() {
   toGameMenu();
   console.log("elo");
-};
+}
 
 // ROUND FUNCTION
 
