@@ -8,27 +8,24 @@
   </head>
   <body>
     <div class="main-container">
-      <h1>ROCK, PAPER, SCISSORS</h1>
+      <div id="tools">
+        <button id="buttonRock" type="button">ROCK</button>
+        <button id="buttonPaper" type="button">PAPER</button>
+        <button id="buttonScissors" type="button">SCISSORS</button>
+      </div> 
+
       <div id="game-area">
-        <div id="button-container">
-          <button type="button" id="buttonRound">PLAY GAME</button>
+        <p class="tab">HUMAN</p>
+        <div class="menu">
+            <button type="button" id="playGame">PLAY GAME</button>
+         </div>
+          <div id="text">START A NEW GAME</div>       
+          <p class="tab2">COMP</p>
+          <strong><span id="humanScoreText">0</span></strong>
+          <strong><span id="computerScoreText">0</span></strong>
+          <h1 id="lastHuman">n/d</h1>
+          <h1 id="lastComp">n/d</h1>
         </div>
-        <div id="score-container">
-          <div class="linijka">
-            <p class="tab">HUMAN SCORE:</p>
-            <strong><span id="humanScoreText">0</span></strong>
-          </div>
-          <div class="linijka">
-            <p class="tab">COMPUTER SCORE:</p>
-            <strong><span id="computerScoreText">0</span></strong>
-          </div>
-        </div>
-        <div id="tools">
-          <button id="buttonRock" type="button">ROCK</button>
-          <button id="buttonPaper" type="button">paper</button>
-          <button id="buttonScissors" type="button">scissors</button>
-        </div>
-        <div id="text">START A NEW GAME</div>
       </div>
     </div>
   </body>

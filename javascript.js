@@ -72,7 +72,7 @@ buttonRound.onclick = toGameMenu;
 function restart() {
   text.innerText = menu[0].text;
 
-  tools.style.display = "none";
+  tools.style.display = "grid";
   scoreContainer.style.display = "none";
   buttonContainer.style.justifyContent = "space-around";
   buttonRound.onclick = toGameMenu;
@@ -85,7 +85,7 @@ function restart() {
 
 function toGameMenu(menu) {
   buttonContainer.style.justifyContent = "flex-end";
-  tools.style.display = "flex";
+  tools.style.display = "grid";
   scoreContainer.style.display = "flex";
   text.innerText = "FIGHT!";
   buttonRound.innerText = "RUN";
