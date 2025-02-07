@@ -23,18 +23,18 @@ body {
 
 .main-container {
   background: var(--gray);
-  width: 100%;
-  aspect-ratio: 9 / 16;
   padding:2rem;
-  display: grid;
-  grid-template-rows: 16fr 9fr;
-  grid-gap: 1rem;
+  margin: 3rem auto;
+  min-width: 550px;
+  max-width: 650px;
+  border-radius: 4px;
+
 }
 
 #tools {
   overflow: hidden;
   display: grid;
-  grid-template-rows: 3fr 1fr;
+  grid-template-rows: 1fr 1fr;
   grid-gap: 1.778rem;
 
   /* flex-flow: column;
@@ -42,8 +42,21 @@ body {
   justify-content: space-around; */
 }
 
+#buttonRock:hover,
+#buttonPaper:hover,
+#buttonScissors:hover {
+  filter: invert(0);
+  transform: translate3d(-1px,4px,-1px);
+  box-shadow: 0px 0px 3px 1px;
+
+}
+
+
 #buttonRock {
   font-size: 5.621rem;
+  border-radius: 1%;
+  max-height: 9.994rem;
+  transition: transform 0.3 ease;
 }
 
 #buttonPaper {
@@ -52,35 +65,40 @@ body {
 
 #buttonScissors {
   font-size:3.35rem;
+  padding: 1.778rem 0;
 }
 
 #buttonRock,
 #buttonPaper,
-#buttonScissors {
+#buttonScissors,
+#playGame {
+  border: 0.562rem solid var(--black);
   font-weight: 900;
+  background-color: var(white);
 }
 
  #game-area {
   display:grid;
   grid-template-columns: 2fr 1fr 1fr;
-  grid-template-rows: 2fr 2fr
-  max-height: 150px;
+  grid-template-rows: 2fr 2fr 2fr;
   grid-gap: 0.778rem;
+  padding: 1rem 0;
 }
 
+#button-container {
+  align-self: center;
+  justify-self: center;
+}
+
+.tab {
+  grid-column: 2;
+}
 .tab2 {
   grid-column:3;
   grid-row:1;
 }
 
-#score-container {
-  display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: 1fr 1fr;
-  padding: 0.316rem;
-  grid-row: 3;
-  grid-column: 2;
-}
+
 span {
   font-size: 3.161rem;
   padding: 0 2rem;
@@ -91,26 +109,17 @@ span {
   background-color: var(--black);
   margin:0 0.562rem;
 }
-/*
-
-.tab {
-  grid-column: 2;
-}
-
-.bkScore1 {
-  grid-column: 1;
-  grid-row: 4;
-  background-color: var(--black);
-  aspect-ratio: 9 / 16;
-}
 
 
 p {
-  font-size: 0.8rem; */
-
+  font-size: 1.778rem; 
+  font-weight: 900;
+  margin:0;
+}
 
 #text {
 align-self: center;
+display: none;
 
 }
 #lastHuman {
@@ -119,3 +128,25 @@ grid-column:2;
 h1 {
   text-align: center;
 }
+
+strong {
+  background-color: var(--black);
+  filter: blur(0.1px);
+  padding:1rem;
+}
+.menu {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+}
+
+
+.menu  #playGame {
+  background-color: var(--black);
+  height:100%;
+  color: var(--white);
+  font-size: 1.778rem;
+  font-weight: 900;
+}
+
